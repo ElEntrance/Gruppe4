@@ -1,0 +1,57 @@
+/* Center the entire content */
+
+body {
+
+    font-family: 'Montserrat', sans-serif;
+
+    background-color: #dad7ceff;
+
+  }
+
+
+
+  h1 {
+
+    color: #595959;
+
+    font-size: 40px;
+
+    font-family: Montserrat;
+
+    text-align: left;
+
+    margin-left: 25%;
+
+    position: relative;
+
+    top: 100px;
+
+  }
+
+
+
+  /* Navigation bar styling */
+
+  nav {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 20px;
+
+  }
+
+
+
+  nav a {
+
+    font-size: 18px;
+
+    color: #595959;
+
+    text-decoration: none;
+
+    margin: 0 10px;
+
+  }
