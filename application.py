@@ -25,3 +25,11 @@ def Getstarted():
 @app.route("/Profile")
 def Profile():
     return render_template("Profile.html")
+
+@app.route("/Quiz")
+def Quiz():
+    return render_template("Quiz.html")
+
+@app.route("/Results")
+def Results():
+    return render_template("Results.html")
