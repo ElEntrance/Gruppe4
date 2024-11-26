@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Log in</title>
+    </head>
+    <body>
+        <nav>
+            <a href="/"> Your dietary guidelines </a> |  <a href="Signup"> Join Now </a> | <a href="Login">Log In </a> | <a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a>
+        </nav>
+        Login
+        <br>
+
+        <form action="Homepagein.html" method "GET"> <!--This form action makes the button "Login" take us to the logged in homepage-->
+            <div>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            <div>
+                <input type="password" name="password" placeholder="Password" required> <!--Type="Password" makes it small dots instead of seeing the password-->
+            </div>
+            <div>
+                <label for="Remember me?">Remember me?</label>
+                <input type="checkbox">
+            </div>
+            <a href="Forgotpassword">Forgot password?</a>
+            <button type="submit">Login</button>
+        </form>
+
+        <form action="Signup.html">
+            or <input type="submit" value="Sign Up">
+        </form>
+    </body>
+</html>
