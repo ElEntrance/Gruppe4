@@ -35,10 +35,9 @@ def Getstarted():
 #________________The Profile Page________________
 @app.route("/Profile")
 def Profile():
-    username = request.args.get("name")
-    usermail = request.args.get("email")
-    return render_template("Profile.html", name = username, email = usermail)
+    return render_template("Profile.html")
 
+#________________The Results Page________________
 @app.route("/Results")
 def Results():
     return render_template("Results.html")
