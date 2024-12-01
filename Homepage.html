@@ -5,12 +5,15 @@
         <title>Homepage</title>
     </html>
 
-    <body onload="displauUserName()" style="background-color: #fffbf0;">
+    <body>
         <nav>
             <a href="/"> Your dietary guidelines </a> |  <a href="Signup"> Join Now </a> | <a href="Login">Log In </a> | <a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a>
+            | <a href="Logout"> Log Out </a>
         </nav>
 
-        Hello! Welcome back!
+        Hello! Welcome back
+        <br>
+        DISPLAYING USER ID: {{userID}}
         <br>
         How well do you follow the Danish Ministry’s official guidelines?
         <br>
@@ -18,7 +21,7 @@
 
         Curious if your daily meals align with Denmark’s official dietary guidelines? This quick, fun quiz will show where you stand! Whether you're a health enthusiast, mindful of nutrition, or just curious, get personalized insights and practical tips. Take the quiz to discover your eating habits!
         <br>
-        <form action="/Getstarted">
+        <form action="Getstarted">
             <input type="submit" value="Let's get started!">
         </form>
         <br>

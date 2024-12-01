@@ -8,23 +8,21 @@
         <nav>
             <a href="/"> Your dietary guidelines </a> |  <a href="Signup"> Join Now </a> | <a href="Login">Log In </a> | <a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a>
         </nav>
-
         Login
         <br>
 
-        <form>
-            <input type="text" placeholder="Email">
+        <form method="POST">
+            <input type="text" placeholder="Email" name="email">
             <br>
-            <input type="text" placeholder="Password">
+            <input type="text" placeholder="Password" name="password">
+            <br>
+            <input type="submit" value="Login">
             <br>
             Remember me? <input type="checkbox">
+            (functionality not yet included)
         </form>
 
-        <form action="/Profile"> <!--This form action makes the button take us to the profile page-->
-            <input type="submit" value="Login">
-        </form>
-
-        <form action="/Signup">
+        <form action="Signup">
             or <input type="submit" value="Sign Up">
         </form>
 
