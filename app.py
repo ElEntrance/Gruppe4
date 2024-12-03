@@ -18,8 +18,12 @@ db = SQL("sqlite:///database.db")
 @app.route("/") # The string in parenthesis is the route that's seen in top of browser
 def Homepage():
     if "userID" not in session: # Makes variable userID in session (if not there)
-       session["userID"] = 0    # 0 means "not logged in"
-    return render_template("Homepage.html", userID = session["userID"]) # Displays homepage, Homepage is given access to userID
+        session["userID"] = 0    # 0 means "not logged in"
+    if session["userID"] == 0:
+        name = "NEW USER"
+    else:
+        name = db.execute("SELECT DISTINCT name FROM users WHERE id = ?", session["userID"])
+    return render_template("Homepage.html", userID = session["userID"], name = name) # Displays homepage, Homepage is given access to userID
 
 #________________The Login Page________________
 @app.route("/Login", methods=["GET", "POST"]) # GET=when loading the page. POST=when login button is pressed

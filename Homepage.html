@@ -20,7 +20,12 @@
             </header>
 <!--main content section-->
             <main class="grid-item1">
-                <h1> Welcome back!</h1>
+                <h1> Welcome back
+                    {% for name in name %}
+                    {{name["name"]}}
+                    {% endfor %}
+                    !
+                </h1>
                 <br>
                 DISPLAYING USER ID: {{userID}}
                 <br>
