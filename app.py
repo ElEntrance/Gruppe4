@@ -42,7 +42,7 @@ def Login():
         if failed == 1:
             return "Invalid username or password"
         elif failed == 0:
-            return redirect("/") # "/" is the homepage
+            return redirect("Getstarted") # "/" is the homepage
 
 
 #________________The Signup Page________________
@@ -60,13 +60,18 @@ def Signup():
         if password1 != password2:
             return "Passwords don't match"
 
+        # TODO fix checking
+        currentMails = db.execute("SELECT email FROM users") # Get current mails
+        if email in currentMails:
+            return "Email already in use"
+
         # This registers the user
         db.execute("INSERT INTO users (name, email, password) VALUES(?, ?, ?)", name, email, password1)
         # This next two lines logs the user in after they are registered
         userID = db.execute("SELECT id FROM users WHERE email == ? AND password == ?", email, password1)
         for row in userID: # Needed to not keep column name
             session["userID"] = row["id"]
-        return redirect("/") # "/" is the homepage
+        return redirect("Getstarted") # "/" is the homepage
 
 #________________The Logout Function (not a html page per say)________________
 @app.route("/Logout")
