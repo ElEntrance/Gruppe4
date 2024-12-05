@@ -25,23 +25,20 @@
                 <th>My score</th>
                 <th>Advice</th>
             </tr>
+            {% for result in results %}
             <tr>
-                <td>25/11/2024</td>
-                <td>8.8</td>
-                <td>Put advice here</td>
+                <td>{{result["date"]}}</td>
+                <td>{{result["score"]}}</td>
+                <td>{{result["advice"]}}</td>
             </tr>
-            <tr>
-                <td>01/12/2024</td>
-                <td>10.2</td>
-                <td>Put advice here</td>
-            </tr>
+            {% endfor %}
         </table>
     </main>
 
 <!--sidebar section-->
     <aside class="grid-item2">
-        <h1> Username: My username</h1>
-        <h1>Email: My email</h1>
+        <h1> Username: {{name}}</h1>
+        <h1>Email: {{email}}</h1>
     </aside>
 <!--foot section-->
     <footer class="grid-item3">
