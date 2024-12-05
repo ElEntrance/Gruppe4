@@ -22,7 +22,9 @@ def Homepage():
     if session["userID"] == 0:
         name = "NEW USER"
     else:
-        name = db.execute("SELECT DISTINCT name FROM users WHERE id = ?", session["userID"])
+        Name = db.execute("SELECT DISTINCT name FROM users WHERE id = ?", session["userID"])
+        # THIS SHIT IS HOW WE GETTIN STRING FOR KEY 'name' IN A DICT IN A LIST Name
+        name = Name[0]['name']
     return render_template("Homepage.html", userID = session["userID"], name = name) # Displays homepage, Homepage is given access to userID
 
 #________________The Login Page________________
@@ -39,9 +41,8 @@ def Login():
         for row in checkList: # Looks for matching email and password in database.
             if row["email"] == typedEmail and row["password"] == typedPassword:
                 # Gets the value of the table
-                userID = db.execute("SELECT id FROM users WHERE email == ? AND password == ?", typedEmail, typedPassword)
-                for row in userID: # Needed to not keep column name
-                    session["userID"] = row["id"]
+                UserID = db.execute("SELECT id FROM users WHERE email == ? AND password == ?", typedEmail, typedPassword)
+                session["userID"] = UserID[0]["id"]
                 failed = 0
         if failed == 1:
             return "Invalid username or password"
@@ -64,17 +65,16 @@ def Signup():
         if password1 != password2:
             return "Passwords don't match"
 
-        # TODO fix checking
         currentMails = db.execute("SELECT email FROM users") # Get current mails
-        if email in currentMails:
-            return "Email already in use"
+        for dict in currentMails:
+            if email == dict['email']:
+                return "Email already in use"
 
         # This registers the user
         db.execute("INSERT INTO users (name, email, password) VALUES(?, ?, ?)", name, email, password1)
         # This next two lines logs the user in after they are registered
-        userID = db.execute("SELECT id FROM users WHERE email == ? AND password == ?", email, password1)
-        for row in userID: # Needed to not keep column name
-            session["userID"] = row["id"]
+        UserID = db.execute("SELECT id FROM users WHERE email == ? AND password == ?", email, password1)
+        session["userID"] = UserID[0]["id"]
         return redirect("Getstarted") # "/" is the homepage
 
 #________________The Logout Function (not a html page per say)________________
