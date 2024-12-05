@@ -10,9 +10,14 @@
     <div id="Homepage">
         <header class= "navbar">
                 <h1 class="logo"><a href="/"> Your dietary guidelines </a></h1>
-                <ul> <!--makes it an un orderes list-->
-                    <li><a href="Signup"> Join Now </a></li> <!--li makes it into a list-->
+                <ul>
+                    {% if userID == 0 %}
+                    <li><a href="Signup"> Join Now </a></li>
                     <li><a href="Login">Log In </a></li>
+                    {% else %}
+                    <li><a href="Logout"> Log Out </a></li>
+                    <li><a href="Profile"> My Profile </a></li>
+                    {% endif %}
                     <li><a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a></li>
                 </ul>
         </header>
