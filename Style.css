@@ -350,8 +350,8 @@
 
 /* Tilstand for valgt knap */
 .answer-option input[type="radio"]:checked {
-  background-color: #264143; /* Fyld farve
-
+  background-color: #264143; /* Fyld farve */
+}
   /* Ensret spørgsmål og svarmuligheder */
 .questions {
   text-align: center; /* Centrér spørgsmål og svarmuligheder */
