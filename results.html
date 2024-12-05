@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!--nyt-->
+    <link rel="stylesheet"type="text/css" href="/static/css/Style.css">
+    <title> Your results </title>
+</head>
+
+<header class= "navbar">
+        <h1><a href="/"> Your dietary guidelines </a></h1>
+        <ul> <!--makes it an un orderes list-->
+            <li><a href="Signup"> Join Now </a></li> <!--li makes it into a list-->
+            <li><a href="Login">Log In </a></li>
+            <li><a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a></li>
+        </ul>
+</header>
+
+    <body>
+
+        <div class="result-container">
+    <section class="grid-item1result">
+
+        <h1 class="result-header">Your results</h1>
+
+        <br>
+        <p class="result-stars">★★☆</p>
+
+    <br>
+
+        <p class="total-score">Your total score is {{score}}/27</p>
+        <br>
+
+        <p class="result-comment">Great! But could be better...</p>
+
+    <br>
+    <p class="result-title">Title: You are a "Casual Eater"</p>
+
+    <br>
+    <p class="result-advice"> Advice: Hydrate or die-drate. It’s not a joke babes!💧⚡</p>
+    <br>
+    <p class="result-share">Take a screenshot of your results and share your score on social media with the hashtag #mydietaryjourney to inspire others!</p>
+<br>
+
+</section>
+
+<!--sidebar section-->
+    <aside class="grid-item2result">
+
+        <h2 class="result-diploma">Your diploma!</h2>
+    <br>
+
+    <h2 class="result-congratulations">Congratulations!
+        <br> You are a Casual Eater!
+    </2>
+
+    <br>
+
+    <form action="Profile">
+        <button class="btn">Collect your diploma!</button>
+    </form>
+
+    </aside>
+</div>
+
+    </body>
+</html>
