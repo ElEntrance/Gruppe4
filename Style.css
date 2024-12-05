@@ -87,8 +87,9 @@
     text-align: center;
     color: rgb(12, 3, 35);
     hyphens: auto; /*breaker teksten, hvor det giver mening*/
-    word-break: break-word; /* Ensure long words break correctly */
+    word-break: keep-all; /* Ensure long words break correctly */
     padding: 20px;
+
 }
 
 .grid-item2 {
