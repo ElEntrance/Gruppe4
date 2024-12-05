@@ -307,3 +307,108 @@
       font-size: 25px;
       text-align: center;
   }
+
+    /* Form styling */
+.answer-form {
+  display: flex;
+  flex-direction: column; /* Vertikal opstilling af muligheder */
+  align-items: center; /* Centrer horisontalt */
+  gap: 15px; /* Lidt luft mellem svarmulighederne */
+}
+
+/* Styling af hver svarmulighed */
+.answer-option {
+  display: flex;
+  align-items: center; /* Centrerer knapper og tekst vertikalt */
+  gap: 10px; /* Luft mellem radio-knap og tekst */
+  background-color: #f0f0f0; /* Lys baggrund for svarmuligheder */
+  border: 2px solid #264143; /* Tydelig kant */
+  border-radius: 10px; /* Bløde hjørner */
+  padding: 10px 20px; /* Gør det nemt at klikke */
+  cursor: pointer; /* Gør det klart, at det er klikbart */
+  width: 100%;
+  max-width: 400px; /* Begræns bredde */
+  transition: background-color 0.3s ease; /* Smooth hover-effekt */
+}
+
+.answer-option:hover {
+  background-color: #e99f4c; /* Skift farve ved hover */
+}
+
+/* Skjul standard radio-knap */
+.answer-option input[type="radio"] {
+  appearance: none; /* Fjern standard styling */
+  width: 20px;
+  height: 20px;
+  border: 2px solid #264143; /* Knapkant */
+  border-radius: 50%; /* Rund knap */
+  background-color: #fff; /* Hvid baggrund */
+  cursor: pointer; /* Klikbart */
+  position: relative; /* For pseudo-element */
+  outline: none; /* Ingen fokusramme */
+}
+
+/* Tilstand for valgt knap */
+.answer-option input[type="radio"]:checked {
+  background-color: #264143; /* Fyld farve
+
+  /* Ensret spørgsmål og svarmuligheder */
+.questions {
+  text-align: center; /* Centrér spørgsmål og svarmuligheder */
+  margin-bottom: 20px; /* Lidt afstand mellem spørgsmål og svarmuligheder */
+}
+
+.answer-form {
+  display: flex;
+  flex-direction: column; /* Svarmulighederne vises under hinanden */
+  align-items: center; /* Centrér elementerne */
+  gap: 15px; /* Afstand mellem svarmulighederne */
+}
+
+.answer-option {
+  text-align: center;
+  margin: 0; /* Fjern ekstra margener */
+}
+
+button.btn {
+  margin-top: 20px; /* Lidt afstand mellem svarmuligheder og knappen */
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.btn:hover {
+  background-color: #45a049; /* Effekt ved hover */
+}
+
+
+/* Styling for taleboblen */
+.comment-bubble {
+  display: none; /* Skjult som standard */
+  position: absolute; /* For at placere den hvor som helst */
+  padding: 10px 20px; /* Polstring for at gøre den behagelig at læse */
+  background-color: #f0f0f0; /* Baggrundsfarve - ændr denne til din hjemmesides baggrundsfarve */
+  border-radius: 15px; /* Runde hjørner */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Lidt skygge for en 3D-effekt */
+  font-size: 16px; /* Størrelse på teksten */
+  color: #333; /* Mørk tekstfarve */
+  font-family: Arial, sans-serif; /* Font der passer til din hjemmeside */
+  max-width: 300px; /* Maksimal bredde på boblen */
+  z-index: 10; /* Sørger for, at boblen er synlig */
+}
+
+/* Pil til taleboblen */
+.comment-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* Lidt under taleboblen */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: #f0f0f0 transparent transparent transparent; /* Farve på pilen, match med boblens farve */
+}
+
