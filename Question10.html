@@ -1,32 +1,52 @@
 <!DOCTYPE html>
 
-<html lang="en">
-    <head>
-        <title>Question 10</title>
-    </head>
-    <body>
-        <nav>
-            <a href="/"> Your dietary guidelines </a> |  <a href="Signup"> Join Now </a> | <a href="Login">Log In </a> | <a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a>
-        </nav>
+        <html lang="en">
+            <head>
+                <title>Question 9</title>
+            </head>
+            <body>
 
-        Oh who does'nt love a little sweet treat? But how often do you treat yourself queen?         <br>
+                    <head>
+                        <meta charset="UTF-8"> <!--nyt-->
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--nyt-->
+                        <title>Question 10</title>
+                        <link rel="stylesheet"type="text/css" href="/static/css/Style.css">
+                    </head>
+
+                <body>
+                    <div id="Homepage">
+                        <header class= "navbar">
+                                <h1><a href="/"> Your dietary guidelines </a></h1>
+                                <ul> <!--makes it an un orderes list-->
+                                    <li><a href="Profile"> My Profile</a></li> <!--li makes it into a list-->
+                                    <li><a href="/">Log Out </a></li>
+                                    <li><a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a></li>
+                                </ul>
+                            </header>
+                             <main class="questions">
+                                 <h2>Oh who doesn't love a little sweet treat 🍭? But how often do you treat yourself queen?</h2>
         <br>
-
-        <form method="POST">
-            <input type="radio" id="answer1" name="answer" value="3">
-            <label for="answer1">Never, I'm healthy AF!</label>
-
-            <input type="radio" id="answer2" name="answer" value="2">
-            <label for="answer2">Rarely (once a week)</label>
-
-            <input type="radio" id="answer3" name="answer" value="1">
-            <label for="answer3">Often (Several days a week)</label>
-
-            <input type="radio" id="answer4" name="answer" value="0">
+        <form method="POST" class="answer-form">
+            <div class="answer-option">
+                <input type="radio" id="answer1" name="answer" value="3">
+            <label for="answer1">Never, I'm healthy AF 😎!</label>
+            </div>
+            <div class="answer-option">
+                <input type="radio" id="answer2" name="answer" value="2">
+            <label for="answer2">Rarely (once a week)😇</label>
+            </div>
+            <div class="answer-option">
+                <input type="radio" id="answer3" name="answer" value="1">
+            <label for="answer3">Often (Several days a week)🤪</label>
+            </div>
+            <div class="answer-option">
+                <input type="radio" id="answer4" name="answer" value="0">
             <label for="answer4">Daily cause I deserve it 💁🏼‍♀️</label>
-            <br>
-            <input type="submit" value="Next question">
+            </div>
+            <button type="submit" class="btn">Next Question</button>
         </form>
+
 
     </body>
 </html>
+
