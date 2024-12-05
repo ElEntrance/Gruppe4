@@ -1,27 +1,43 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <title>Question 8</title>
-    </head>
-    <body>
-        <nav>
-            <a href="/"> Your dietary guidelines </a> |  <a href="Signup"> Join Now </a> | <a href="Login">Log In </a> | <a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a>
-        </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 8</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/Style.css">
+</head>
+<body>
+    <div id="Homepage">
+        <header class="navbar">
+            <h1><a href="/">Your dietary guidelines</a></h1>
+            <ul>
+                <li><a href="Profile">My Profile</a></li>
+                <li><a href="/">Log Out</a></li>
+                <li><a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad">Read More</a></li>
+            </ul>
+        </header>
+        <main class="questions">
+            <h2>Serious question now... Olive oil or butter? 🤨</h2>
+            <form method="POST" class="answer-form">
+                <!-- Option 1: Olive Oil GIF -->
+                <div class="answer-option">
+                    <input type="radio" id="answer1" name="answer" value="3">
+                    <label for="answer1">
+                        <img src="/static/images/oliveoil.gif" alt="Olive Oil GIF" style="width: 300px; height: 250px;">
+                        <br>Olive oil baby!!
+                    </label>
+                </div>
 
-        Who does'nt like a good charcuterie board! But girl I wanna know what dairy products would be on yours?
-        <br>
+                <!-- Option 2: Butter GIF -->
+                <div class="answer-option">
+                    <input type="radio" id="answer2" name="answer" value="2">
+                    <label for="answer2">
+                        <img src="/static/images/butter.gif" alt="Butter" style="width: 300px; height: 250px;">
+                        <br>Butter-gang
+                    </label>
+                    </div>
+                    <button type="submit" class="btn">Next Question</button>
+                </form>
 
-        <form method="POST">
-            <input type="radio" id="answer1" name="answer" value="1">
-            <label for="answer1">Plantbased oil like oliveoil</label>
-
-            <input type="radio" id="answer2" name="answer" value="0">
-            <label for="answer2">Butter or margarine</label>
-            <br>
-
-            <input type="submit" value="Next question">
-        </form>
-
-    </body>
-</html>
+                </body>
+            </html>
