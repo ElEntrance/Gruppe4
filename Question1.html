@@ -3,33 +3,96 @@
 <html lang="en">
     <head>
         <title>Question 1</title>
-        <link rel="stylesheet"type="text/css" href="/static/css/Style.css">
     </head>
     <body>
-        <nav>
-            <a href="/"> Your dietary guidelines </a> | <a href="Signup"> Join Now </a> | <a href="Login">Log In </a> | <a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a>
-        </nav>
 
-        Okay let's get serious now, how often have you been a plant baddie and included fruit, vegetables og plantbased ingredients in your meals?
+            <head>
+                <meta charset="UTF-8"> <!--nyt-->
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--nyt-->
+                <title>Question 1</title>
+                <link rel="stylesheet"type="text/css" href="/static/css/Style.css">
+            </head>
+
+        <body>
+            <div id="Homepage">
+                <header class= "navbar">
+                        <h1><a href="/"> Your dietary guidelines </a></h1>
+                        <ul> <!--makes it an un orderes list-->
+                            <li><a href="Profile"> My Profile</a></li> <!--li makes it into a list-->
+                            <li><a href="/">Log Out </a></li>
+                            <li><a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a></li>
+                        </ul>
+                     </header>
+                     <main class="questions">
+
+                        <h2> Okay let's get serious now. In how many of your meals have you been a plant baddie and included fruit, vegetables or plantbased ingredients? 🥦🍏🥑</h2>
+                    </main>
+
         <br>
 
-        <!-- The user selects an answer which is then submitted -->
-        <form method="POST">
-            <input type="radio" id="answer1" name="answer" value="3">
-            <!-- Lable tag makes the text click-able like the checkbox -->
-            <label for="answer1">All duh 🙄</label>
 
-            <input type="radio" id="answer2" name="answer" value="2">
-            <label for="answer2">Most of them 😬</label>
 
-            <input type="radio" id="answer3" name="answer" value="1">
-            <label for="answer3">A few 🫣</label>
-
-            <input type="radio" id="answer4" name="answer" value="0">
-            <label for="answer4">None 💀</label>
-            <br>
-            <input type="submit" value="Next question">
+        <form method="POST" class="answer-form">
+            <div class="answer-option">
+                <input type="radio" id="answer1" name="answer" value="3">
+                <label for="answer1">All duh 🙄</label>
+            </div>
+            <div class="answer-option">
+                <input type="radio" id="answer2" name="answer" value="2">
+                <label for="answer2">Most of them 😬</label>
+            </div>
+            <div class="answer-option">
+                <input type="radio" id="answer3" name="answer" value="1">
+                <label for="answer3">A few 🫣</label>
+            </div>
+            <div class="answer-option">
+                <input type="radio" id="answer4" name="answer" value="0">
+                <label for="answer4">None 💀</label>
+            </div>
+            <button type="submit" class="btn">Next Question</button>
         </form>
 
-    </body>
-</html>
+        <!-- Kommentarer der kun vises når "All duh" eller "None" er valgt -->
+        <div id="commentAllDuh" class="comment-bubble" style="display:none;">
+            <p>Slayy!</p> <!-- Kommentar for "All duh" -->
+        </div>
+
+        <div id="commentNone" class="comment-bubble" style="display:none;">
+            <p>Ew girl, you’re giving me the ick </p> <!-- Kommentar for "None" -->
+        </div>
+
+
+        <script>
+            // Funktion der viser taleboble og skjuler den efter 3 sekunder
+            function hideUnhide() {
+                var allDuhOption = document.getElementById("answer1");  // "All duh" radio-knap
+                var noneOption = document.getElementById("answer4");    // "None" radio-knap
+                var commentAllDuh = document.getElementById("commentAllDuh"); // Kommentar for "All duh"
+                var commentNone = document.getElementById("commentNone"); // Kommentar for "None"
+
+                // Hvis "All duh" er valgt, vis taleboblen med kommentar "Slayy!"
+                if (allDuhOption.checked) {
+                    commentAllDuh.style.display = "block"; // Vis taleboble for "All duh"
+                    setTimeout(function() {
+                        commentAllDuh.style.display = "none"; // Skjul taleboble efter 3 sekunder
+                    }, 3000); // 3000 ms = 3 sekunder
+                } else {
+                    commentAllDuh.style.display = "none"; // Skjul taleboble
+                }
+
+                // Hvis "None" er valgt, vis taleboblen med kommentar "ew girl"
+                if (noneOption.checked) {
+                    commentNone.style.display = "block"; // Vis taleboble for "None"
+                    setTimeout(function() {
+                        commentNone.style.display = "none"; // Skjul taleboble efter 3 sekunder
+                    }, 3000); // 3000 ms = 3 sekunder
+                } else {
+                    commentNone.style.display = "none"; // Skjul taleboble
+                }
+            }
+
+            // Lyt efter ændringer på radio-knapperne og opdater kommentarer
+            document.querySelectorAll('input[name="answer"]').forEach(function(radio) {
+                radio.addEventListener("change", hideUnhide); // Kald hideUnhide når en radio-knap ændres
+            });
+        </script>
