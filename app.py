@@ -98,8 +98,10 @@ def Getstarted():
 def Profile():
     # From database we find the user's past results, then name, then email.
     results = db.execute("SELECT date, score, advice FROM results JOIN users on userID = id WHERE userID = ? ORDER BY date", session["userID"])
-    name = db.execute("SELECT DISTINCT name FROM users WHERE id = ?", session["userID"])
-    email = db.execute("SELECT DISTINCT email FROM users WHERE id = ?", session["userID"])
+    Name = db.execute("SELECT DISTINCT name FROM users WHERE id = ?", session["userID"])
+    name = Name[0]["name"]
+    Email = db.execute("SELECT DISTINCT email FROM users WHERE id = ?", session["userID"])
+    email = Email[0]["email"]
     return render_template("Profile.html", results = results, name = name, email = email)
 
 #________________The Results Page________________
