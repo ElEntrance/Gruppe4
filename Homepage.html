@@ -23,11 +23,15 @@
         </header>
 <!--main content section-->
     <main class="grid-item1" lang="en">
-        <h1> Welcome back!</h1>
+        {% if userID == 0 %}
+        <h1> Welcome!</h1>
+        {% else %}
+        <h1> Welcome back {{ name }}!</h1>
+        {% endif %}
         <h2> How well do you follow the Danish Ministry’s official guidelines? </h2>
         <p>
-            Curious if your daily meals align with Denmark’s official dietary guidelines? 
-            This quick, fun quiz will show where you stand! Whether you're a health enthusiast, mindful of nutrition, or just curious, get personalized insights and practical tips. 
+            Curious if your daily meals align with Denmark’s official dietary guidelines?
+            This quick, fun quiz will show where you stand! Whether you're a health enthusiast, mindful of nutrition, or just curious, get personalized insights and practical tips.
             Take the quiz to discover your eating habits!
         </p>
         <form action="Getstarted">
