@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 
-<html lang="en">
-    <head>
-        <title>Question 7</title>
-    </head>
-    <body>
-        <nav>
-            <a href="/"> Your dietary guidelines </a> |  <a href="Signup"> Join Now </a> | <a href="Login">Log In </a> | <a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a>
-        </nav>
+        <html lang="en">
+            <head>
+                <title>Question 7</title>
+            </head>
+            <body>
 
-        Now to pasta!
-        Do you like your pasta like you like your men? (a little white bitch or a dark king?)
-        Choose what represents your type best:
-        <br>
+                    <head>
+                        <meta charset="UTF-8"> <!--nyt-->
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--nyt-->
+                        <title>Question 1</title>
+                        <link rel="stylesheet"type="text/css" href="/static/css/Style.css">
+                    </head>
 
-        <form method="POST">
-            <input type="radio" id="answer1" name="answer" value="3">
-            <label for="answer1">Darkest</label>
+                <body>
+                    <div id="Homepage">
+                        <header class= "navbar">
+                                <h1><a href="/"> Your dietary guidelines </a></h1>
+                                <ul> <!--makes it an un orderes list-->
+                                    <li><a href="Profile"> My Profile</a></li> <!--li makes it into a list-->
+                                    <li><a href="/">Log Out </a></li>
+                                    <li><a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a></li>
+                                </ul>
+                             </header>
+                             <main class="questions">
 
-            <input type="radio" id="answer2" name="answer" value="2">
-            <label for="answer2">Darker</label>
+                                <h2> Now to pasta! How do you like it? 🫦 </h2>
+                            </main>
 
-            <input type="radio" id="answer3" name="answer" value="1">
-            <label for="answer3">Darker</label>
+                <br>
 
-            <input type="radio" id="answer4" name="answer" value="0">
-            <label for="answer4">White</label>
-            <br>
 
-            <input type="submit" value="Next question">
-        </form>
+                <form method="POST" class="answer-form">
+                    <div class="answer-option">
+                        <input type="radio" id="answer1" name="answer" value="3">
+            <label for="answer1">Super Dark 🫡</label>
+                </div>
+                <div class="answer-option">
+                    <input type="radio" id="answer2" name="answer" value="2">
+            <label for="answer2">Darker😏 </label>
+                </div>
+                <div class="answer-option">
+                    <input type="radio" id="answer3" name="answer" value="1">
+            <label for="answer3">More Grains😛</label>
+                </div>
+            <div class="answer-option">
+                <input type="radio" id="answer4" name="answer" value="0">
+            <label for="answer4">White 🙂</label>
+            </div>
+                <button type="submit" class="btn">Next Question</button>
+            </form>
 
-    </body>
-</html>
+            </body>
+        </html>
