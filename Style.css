@@ -198,7 +198,7 @@
   }
 
 .grid-item1result {
-    background-color: #eeaacc;
+    background-color: #a4c3b2;
     grid-area: main;
     font-size: 24px;
     border: 2px solid #264143;
@@ -216,7 +216,7 @@
 }
 
 .grid-item2result {
-    background-color: #eedeaa;
+    background-color: #cce3de;
     grid-area: side;
     font-size: 24px;
     border: 2px solid #264143;
