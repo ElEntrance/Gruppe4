@@ -1,87 +1,24 @@
 from flask import Flask, render_template, request, session, redirect
-from flask_session import Session
-from cs50 import SQL          # For interacting with our database.
-from datetime import datetime # For getting the curernt date
-
-# PASS VARIABLES IN RENDER_TEMPLATE FUNCTION. REDIRECT ACTUALLY JUST RUNS THE OTHER FUNCTION
 
 #________________Setting up Flask________________
 app = Flask(__name__) # These four lines are form the web stack video on databases. They allow for uniqe sessions for each user.
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
-
-#________________Defining "db" to be our database________________
-db = SQL("sqlite:///database.db")
 
 #________________The Homepage________________
-@app.route("/") # The string in parenthesis is the route that's seen in top of browser
+@app.route("/")
 def Homepage():
-    if "userID" not in session: # Makes variable userID in session (if not there)
-        session["userID"] = 0    # 0 means "not logged in"
-    if session["userID"] == 0:
-        name = "NEW USER"
-    else:
-        name = db.execute("SELECT DISTINCT name FROM users WHERE id = ?", session["userID"])
-    return render_template("Homepage.html", userID = session["userID"], name = name) # Displays homepage, Homepage is given access to userID
+    return render_template("Homepage.html")
 
 #________________The Login Page________________
-@app.route("/Login", methods=["GET", "POST"]) # GET=when loading the page. POST=when login button is pressed
+@app.route("/Login")
 def Login():
-    if request.method == "GET":
-        return render_template("Login.html")
-
-    elif request.method == "POST":
-        typedEmail = request.form.get("email")                      # We save the string from "email" input field
-        typedPassword = request.form.get("password")
-        checkList = db.execute("SELECT email, password FROM users") # Get's list of emails and passwords in database
-        failed = 1            # For tracking if login didn't happen
-        for row in checkList: # Looks for matching email and password in database.
-            if row["email"] == typedEmail and row["password"] == typedPassword:
-                # Gets the value of the table
-                userID = db.execute("SELECT id FROM users WHERE email == ? AND password == ?", typedEmail, typedPassword)
-                for row in userID: # Needed to not keep column name
-                    session["userID"] = row["id"]
-                failed = 0
-        if failed == 1:
-            return "Invalid username or password"
-        elif failed == 0:
-            return redirect("Getstarted") # "/" is the homepage
-
+    return render_template("Login.html")
 
 #________________The Signup Page________________
-@app.route("/Signup", methods=["GET", "POST"])
+@app.route("/Signup")
 def Signup():
-    if request.method == "GET":
-        return render_template("Signup.html")
-
-    elif request.method == "POST":
-        name = request.form.get("name")
-        email = request.form.get("email")
-        password1 = request.form.get("password1")
-        password2 = request.form.get("password2")
-
-        if password1 != password2:
-            return "Passwords don't match"
-
-        # TODO fix checking
-        currentMails = db.execute("SELECT email FROM users") # Get current mails
-        if email in currentMails:
-            return "Email already in use"
-
-        # This registers the user
-        db.execute("INSERT INTO users (name, email, password) VALUES(?, ?, ?)", name, email, password1)
-        # This next two lines logs the user in after they are registered
-        userID = db.execute("SELECT id FROM users WHERE email == ? AND password == ?", email, password1)
-        for row in userID: # Needed to not keep column name
-            session["userID"] = row["id"]
-        return redirect("Getstarted") # "/" is the homepage
-
-#________________The Logout Function (not a html page per say)________________
-@app.route("/Logout")
-def Logout():
-    session["userID"] = 0
-    return redirect("/")
+    return render_template("Signup.html")
 
 #________________The Forgot Password Page________________
 @app.route("/Forgotpassword")
@@ -96,26 +33,12 @@ def Getstarted():
 #________________The Profile Page________________
 @app.route("/Profile")
 def Profile():
-    # From database we find the user's past results, then name, then email.
-    results = db.execute("SELECT date, score, advice FROM results JOIN users on userID = id WHERE userID = ? ORDER BY date", session["userID"])
-    name = db.execute("SELECT DISTINCT name FROM users WHERE id = ?", session["userID"])
-    email = db.execute("SELECT DISTINCT email FROM users WHERE id = ?", session["userID"])
-    return render_template("Profile.html", results = results, name = name, email = email)
+    return render_template("Profile.html")
 
 #________________The Results Page________________
 @app.route("/Results")
 def Results():
-    # Calculate score
-    score = 0
-    for answer in session["Answers"].values(): # .values() gets the result of each question
-        score += int(answer)                   # answers saved as strings so much convert
-    # Get date, advice
-    date = datetime.today().strftime("%d-%m-%Y")
-    advice = "TODO Input advice here"
-    # Put into results database
-    db.execute("INSERT INTO results (userID, date, score, advice) VALUES(?, ?, ?, ?)", session["userID"], date, score, advice)
-    return render_template("Results.html", score = score, advice = advice)
-
+    return render_template("Results.html")
 
 #________________The First Question________________
 @app.route("/Question1", methods=["GET", "POST"])
@@ -230,7 +153,3 @@ def Question11():
     elif request.method == "POST":
         session["Answers"]["Answer11"] = request.form.get("answer")
         return redirect("Results")
-
-# Sofie sagde, de havde inkl. det her i deres kode. Ved ikke hvorfor.
-# if __name__ == "__main__":
-#     app.run(debug=True)

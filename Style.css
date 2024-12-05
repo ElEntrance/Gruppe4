@@ -1,0 +1,198 @@
+.background {
+    background: color #f6fff8;;
+    background-position: cover;
+}
+
+.navbar {
+    grid-area: navbar;
+   display: flex;
+   width: 100%;
+   height: 60px;
+   align-items: center;
+   justify-content: space-around;
+   background-color: #6b9080;
+   color: beige;
+   margin-bottom: 60px;
+   padding: 0 20px;
+}
+.navbar ul{
+    display: flex;
+    gap: 40px;
+    list-style-type: none;
+}
+.navbar ul, li, a{
+    color: beige;
+    text-decoration: none;
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 12px;
+    transition: ease-in-out;
+    align-items: center;
+}
+
+.navbar a:hover{
+    background-color: #a4c3b2;
+}
+.navbar li{
+    float: right;
+}
+
+.logo {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 36px; 
+    font-weight: bold;
+    color: beige;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 0; 
+    line-height: 1;
+}
+
+/*h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: beige;
+}*/
+
+#Homepage { /* This is to get the grid layout on the pages that use the id homepage*/
+    display: grid;
+    grid-template-areas:
+    "navbar navbar"
+    "main side";
+    grid-template-rows: 60px auto; /* Row heights: navbar 60px, content auto */
+    grid-template-columns: 2fr 1fr; /* Columns: main 2fr, sidebar 1fr */
+    gap: 20px; /* Space between items */
+    row-gap: 30px;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+.grid-item1 {
+    background-color: #a4c3b2;
+    grid-area: main;
+    font-size: 24px;
+    border: 2px solid #264143;
+    border-radius: 20px;
+    box-shadow: 3px 4px 0px 1px #E99F4C;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(12, 3, 35);
+    hyphens: auto; /*breaker teksten, hvor det giver mening*/
+    word-break: break-word; /* Ensure long words break correctly */
+    padding: 20px;
+}
+
+.grid-item2 {
+    background-color: #cce3de;
+    grid-area: side;
+    font-size: 24px;
+    border: 2px solid #264143;
+    border-radius: 20px;
+    box-shadow: 3px 4px 0px 1px #E99F4C;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(12, 3, 35);
+    padding: 20px;
+}
+
+.guideline-image {
+    display: block; /* Ensures it appears on its own line */
+    margin: 20px auto 0; /* Adds spacing and centers the image */
+    margin-bottom: 20px;
+    max-width: 100%; /* Prevents it from exceeding the container width */
+    height: 500px; /* Maintains aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+/* From Uiverse.io by mi-series to get container features*/ 
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+} 
+  .form_area {  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #EDDCD9;
+    height: auto;
+    width: auto;
+    border: 2px solid #264143;
+    border-radius: 20px;
+    box-shadow: 3px 4px 0px 1px #E99F4C;
+  }
+  
+  .title {
+    color: #264143;
+    font-weight: 900;
+    font-size: 1.5em;
+    margin-top: 20px;
+  }
+  
+  .sub_title {
+    font-weight: 600;
+    margin: 5px 0;
+  }
+  
+  .form_group {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 10px;
+  }
+  
+  .form_style {
+    outline: none;
+    border: 2px solid #264143;
+    box-shadow: 3px 4px 0px 1px #E99F4C;
+    width: 290px;
+    padding: 12px 10px;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+  
+  .form_style:focus, .btn:focus {
+    transform: translateY(4px);
+    box-shadow: 1px 2px 0px 0px #E99F4C;
+  }
+  
+  .btn {
+    padding: 15px;
+    margin: 25px 0px;
+    width: 290px;
+    font-size: 15px;
+    background: #c44b9a;
+    border-radius: 10px;
+    font-weight: 800;
+    box-shadow: 3px 3px 0px 0px #E99F4C;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    opacity: .9;
+  }
+  
+  .link {
+    font-weight: 800;
+    color: #264143;
+    padding: 5px;
+  }
