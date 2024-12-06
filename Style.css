@@ -87,9 +87,8 @@
     text-align: center;
     color: rgb(12, 3, 35);
     hyphens: auto; /*breaker teksten, hvor det giver mening*/
-    word-break: keep-all; /* Ensure long words break correctly */
+    word-break: break-word; /* Ensure long words break correctly */
     padding: 20px;
-
 }
 
 .grid-item2 {
@@ -118,6 +117,23 @@
     height: 500px; /* Maintains aspect ratio */
     border-radius: 10px; /* Optional: Adds rounded corners */
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+.containerquestion {
+    background-color: #a4c3b2;
+    grid-area: main;
+    font-size: 24px;
+    border: 2px solid #264143;
+    border-radius: 20px;
+    box-shadow: 3px 4px 0px 1px #E99F4C;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(12, 3, 35);
+    padding: 20px;
 }
 
 /* From Uiverse.io by mi-series to get container features*/ 
@@ -199,7 +215,7 @@
   }
 
 .grid-item1result {
-    background-color: #a4c3b2;
+    background-color: #eeaacc;
     grid-area: main;
     font-size: 24px;
     border: 2px solid #264143;
@@ -217,7 +233,7 @@
 }
 
 .grid-item2result {
-    background-color: #cce3de;
+    background-color: #eedeaa;
     grid-area: side;
     font-size: 24px;
     border: 2px solid #264143;
@@ -351,8 +367,9 @@
 
 /* Tilstand for valgt knap */
 .answer-option input[type="radio"]:checked {
-  background-color: #264143; /* Fyld farve */
+  background-color: #264143; /* Fyld farve*/
 }
+
   /* Ensret spørgsmål og svarmuligheder */
 .questions {
   text-align: center; /* Centrér spørgsmål og svarmuligheder */
@@ -371,17 +388,20 @@
   margin: 0; /* Fjern ekstra margener */
 }
 
-button.btn {
+.btnq {
   margin-top: 20px; /* Lidt afstand mellem svarmuligheder og knappen */
   padding: 10px 20px;
   background-color: #4CAF50;
   color: white;
-  border: none;
-  border-radius: 5px;
+  outline: none;
+  border: 2px solid #264143;
+border-radius: 5px;
   cursor: pointer;
+  transform: translateY(4px);
+    box-shadow: 1px 2px 0px 0px #E99F4C;
 }
 
-button.btn:hover {
+.btnq:hover {
   background-color: #45a049; /* Effekt ved hover */
 }
 
@@ -412,4 +432,3 @@ button.btn:hover {
   border-style: solid;
   border-color: #f0f0f0 transparent transparent transparent; /* Farve på pilen, match med boblens farve */
 }
-
