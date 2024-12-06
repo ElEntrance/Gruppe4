@@ -111,13 +111,86 @@ def Results():
     score = 0
     for answer in session["Answers"].values(): # .values() gets the result of each question
         score += int(answer)                   # answers saved as strings so much convert
-    # Get date, advice
+    # Get date
     date = datetime.today().strftime("%d-%m-%Y")
-    advice = "TODO Input advice here"
+    # Get adivce
+
+    # Get points for each category (i admit this could be a function) saved in list
+    pointList = [0] * 7 # Makes a list of 7 values. 0 right now.
+
+    a = float(session["Answers"]["Answer1"])
+    b = float(session["Answers"]["Answer2"])
+    if a == 0 or b == 0:
+        category1 = 0
+    else:
+        category1 = (a + b) / 2
+    pointList[0] = category1
+
+    category2 = int(session["Answers"]["Answer3"])
+    pointList[1] = category2
+
+    a = float(session["Answers"]["Answer4"])
+    b = float(session["Answers"]["Answer5"])
+    if a == 0 or b == 0:
+        category3 = 0
+    else:
+        category3 = (a + b) / 2
+    pointList[2] = category3
+
+    a = float(session["Answers"]["Answer6"])
+    b = float(session["Answers"]["Answer7"])
+    if a == 0 or b == 0:
+        category4 = 0
+    else:
+        category4 = (a + b) / 2
+    pointList[3] = category4
+
+    a = float(session["Answers"]["Answer8"])
+    b = float(session["Answers"]["Answer9"])
+    if a == 0 or b == 0:
+        category5 = 0
+    else:
+        category5 = (a + b) / 2
+    pointList[4] = category5
+
+    category6 = int(session["Answers"]["Answer10"])
+    pointList[5] = category6
+
+    category7 = int(session["Answers"]["Answer11"])
+    pointList[6] = category7
+
+    adviceFor = 1 # We want the advice for category 1-7, depending on what is lowest (then first)
+    for points in pointList:
+        if points == min(pointList):
+            break
+        adviceFor += 1
+
+    # Also get link for recepi for worst category
+    if adviceFor == 1:
+        advice = "Your plate is begging for a glow-up. Add some veggies – they won’t bite, but you should!🥦✨"
+        recipe = "https://natashaskitchen.com/easy-vegetable-soup-recipe/"
+    if adviceFor == 2:
+        advice = "Fruits and veggies are the Beyoncé of your plate – flawless and essential!🥦👑"
+        recipe = "https://tastesbetterfromscratch.com/fresh-fruit-salad/"
+    if adviceFor == 3:
+        advice = "Legumes are like little protein-packed superheroes. Let them save the day!🫘💪"
+        recipe = "https://www.healthylittlefoodies.com/red-lentil-lasagne/"
+    if adviceFor == 4:
+        advice = "White bread is so last season. Go full grain, and stay ahead of the trend.🍞✨"
+        recipe = "https://www.forkknifeswoon.com/whole-wheat-pasta-with-broccoli-and-chicken-sausage/"
+    if adviceFor == 5:
+        advice = "Cheese is great, but your heart says 'How about a lighter option?'🧀❤"
+        recipe = "https://www.noracooks.com/vegan-cheesecake/"
+    if adviceFor == 6:
+        advice = "Cutting back on junk food is like cutting out toxic friends – necessary.🍔❌💅"
+        recipe = "https://thecleaneatingcouple.com/healthy-baked-french-fries/"
+    if adviceFor == 7:
+        advice = "Drink more water. Your skin and kidneys are tired of your coffee addiction.💧☕"
+        recipe = "https://www.gundersenhealth.org/health-wellness/staying-healthy/6-easy-tips-to-drink-more-water-daily"
+
     # Put into results database
     db.execute("INSERT INTO results (userID, date, score, advice) VALUES(?, ?, ?, ?)", session["userID"], date, score, advice)
-    return render_template("Results.html", score = score, advice = advice)
-
+    return render_template("Results.html", score = score, advice = advice, recipe = recipe)
 
 #________________The First Question________________
 @app.route("/Question1", methods=["GET", "POST"])
