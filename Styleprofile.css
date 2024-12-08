@@ -1,6 +1,6 @@
 .background {
     background: color #f6fff8;;
-    background-position: cover;
+    background-size: cover;
 }
 .navbar {
     grid-area: navbar;
@@ -130,7 +130,7 @@
     color: rgb(12, 3, 35);
 }
   
-/* From Uiverse.io by kennyotsu */ 
+/* From Uiverse.io by kennyotsu to get responsive card on profile page */ 
 .container {
   position: relative;
   width: 190px;
@@ -508,3 +508,30 @@
                 0 0 50px rgb(0,140,255),
                 0 0 100px rgb(0,140,255);
   }
+  /* ------------ */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    cursor: pointer;
+    z-index: 300;
+    transform: translateY(-50%);
+}
+
+.left-arrow {
+    left: -30px; /* Adjust for positioning */
+    border-width: 15px 20px 15px 0;
+    border-color: transparent #6b9080 transparent transparent;
+}
+
+.right-arrow {
+    right: -30px; /* Adjust for positioning */
+    border-width: 15px 0 15px 20px;
+    border-color: transparent transparent transparent #6b9080;
+}
+
+.arrow:hover {
+    border-color: transparent #a4c3b2 transparent transparent; /* Change color on hover */
+}

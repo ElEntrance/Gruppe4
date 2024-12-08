@@ -4,8 +4,9 @@
         <title>Homepage</title>
         <link rel="stylesheet"type="text/css" href="/static/css/Styleprofile.css">
     </head>
-<div class="background"></div>
+
 <body>
+    <div class="background"></div>
      <div id="Homepage">
         <header class= "navbar">
                 <h1><a href="/"> Your dietary guidelines </a></h1>
@@ -25,57 +26,61 @@
                 <th>My score</th>
                 <th>Advice</th>
             </tr>
-            {% for result in results %}
             <tr>
-                <td>{{result["date"]}}</td>
-                <td>{{result["score"]}}</td>
-                <td>{{result["advice"]}}</td>
+                <td>25/11/2024</td>
+                <td>8.8</td>
+                <td>Put advice here</td>
             </tr>
-            {% endfor %}
+            <tr>
+                <td>01/12/2024</td>
+                <td>10.2</td>
+                <td>Put advice here</td>
+            </tr>
         </table>
     </main>
 
 <!--sidebar section-->
     <aside class="grid-item2">
-        <h1>Username: {{name}}</h1>
-        <h1>Email: {{email}}</h1>
+        <h1> Username: My username</h1>
+        <h1>Email: My email</h1>
     </aside>
 <!--foot section-->
     <footer class="grid-item3">
         <button class="shadow__btn">
             Collected diplomas</button>
-            <br>
 <!--From Uiverse.io by kennyotsu-->
 <div class="container noselect">
     <div class="canvas">
-      <div class="tracker tr-1"></div>
-      <div class="tracker tr-2"></div>
-      <div class="tracker tr-3"></div>
-      <div class="tracker tr-4"></div>
-      <div class="tracker tr-5"></div>
-      <div class="tracker tr-6"></div>
-      <div class="tracker tr-7"></div>
-      <div class="tracker tr-8"></div>
-      <div class="tracker tr-9"></div>
-      <div class="tracker tr-10"></div>
-      <div class="tracker tr-11"></div>
-      <div class="tracker tr-12"></div>
-      <div class="tracker tr-13"></div>
-      <div class="tracker tr-14"></div>
-      <div class="tracker tr-15"></div>
-      <div class="tracker tr-16"></div>
-      <div class="tracker tr-17"></div>
-      <div class="tracker tr-18"></div>
-      <div class="tracker tr-19"></div>
-      <div class="tracker tr-20"></div>
-      <div class="tracker tr-21"></div>
-      <div class="tracker tr-22"></div>
-      <div class="tracker tr-23"></div>
-      <div class="tracker tr-24"></div>
-      <div class="tracker tr-25"></div>
-      <div id="card">
-        <img src="/static/images/diploma.png" alt="Diploma" style="width: 200px; height: 200px; position: absolute; right: 100px; z-index: 1">      <p id="prompt">SEE HERE!</p>
-        <div class="title" style="z-index: 1; color: black" >Life isn't a cheat-day honey</div>
+        <div class="tracker tr-1"></div>
+        <div class="tracker tr-2"></div>
+        <div class="tracker tr-3"></div>
+        <div class="tracker tr-4"></div>
+        <div class="tracker tr-5"></div>
+        <div class="tracker tr-6"></div>
+        <div class="tracker tr-7"></div>
+        <div class="tracker tr-8"></div>
+        <div class="tracker tr-9"></div>
+        <div class="tracker tr-10"></div>
+        <div class="tracker tr-11"></div>
+        <div class="tracker tr-12"></div>
+        <div class="tracker tr-13"></div>
+        <div class="tracker tr-14"></div>
+        <div class="tracker tr-15"></div>
+        <div class="tracker tr-16"></div>
+        <div class="tracker tr-17"></div>
+        <div class="tracker tr-18"></div>
+        <div class="tracker tr-19"></div>
+        <div class="tracker tr-20"></div>
+        <div class="tracker tr-21"></div>
+        <div class="tracker tr-22"></div>
+        <div class="tracker tr-23"></div>
+        <div class="tracker tr-24"></div>
+        <div class="tracker tr-25"></div>
+        <div class="arrow left-arrow"></div> <!-- Left Arrow -->
+        <div class="arrow right-arrow"></div>
+        <div id="card">
+            <img src="/static/images/diploma.png" alt="Diploma" style="width: 200px; height: 200px; position: absolute; right: 100px; z-index: 1">      <p id="prompt">SEE HERE!</p>
+        <div class="title" style="z-index: 1; color: white" >Life isn't a cheat-day honey</div>
       </div>
     </div>
   </div>
