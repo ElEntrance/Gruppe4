@@ -23,7 +23,7 @@
                                     <li><a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a></li>
                                 </ul>
                             </header>
-                             <main class="containerquestion">
+                             <main class="questions">
                                  <h2>Who doesn't like a good charcuterie board? But girl I wanna know what the most important part is on yours!</h2>
         <br>
          <form method="POST" class="answer-form">
@@ -49,8 +49,53 @@
                         <br>Cheese, like brie or camembert 🧀
                     </label>
                     </div>
-                <button type="submit" class="btnq">Next Question</button>
+                <button type="submit" class="btn">Next Question</button>
             </form>
-        </main>
+
             </body>
         </html>
+
+         <!-- Kommentarer der kun vises når "All duh" eller "None" er valgt -->
+     <div id="commentAllDuh" class="comment-bubble" style="display:none;">
+        <p>I knew you were a boss ass bitch! </p> <!-- Kommentar for "All duh" -->
+    </div>
+
+    <div id="commentNone" class="comment-bubble" style="display:none;">
+        <p>Yikes.. Let's pretend that didn't happen 😬</p> <!-- Kommentar for "None" -->
+    </div>
+
+    <script>
+    function hideUnhide() {
+        var allDuhOption = document.getElementById("answer1");  // "All duh" radio-knap
+        var discouragingOptions = [document.getElementById("answer3")]; // "None" radio-knapper
+        var commentAllDuh = document.getElementById("commentAllDuh"); // Kommentar for "All duh"
+        var commentNone = document.getElementById("commentNone"); // Kommentar for discouraging
+
+        // Hvis "All duh" er valgt, vis taleboblen med kommentar "Chefs Kiss 😘"
+        if (allDuhOption.checked) {
+            commentAllDuh.style.display = "block"; // Vis taleboble for "All duh"
+            setTimeout(function() {
+                commentAllDuh.style.display = "none"; // Skjul taleboble efter 3 sekunder
+            }, 3000); // 3000 ms = 3 sekunder
+        } else {
+            commentAllDuh.style.display = "none"; // Skjul taleboble
+        }
+
+        // Hvis "None" (answer1 eller answer7) er valgt, vis taleboblen med kommentar "Yikes.."
+        if (discouragingOptions.some(option => option.checked)) {
+            commentNone.style.display = "block"; // Vis taleboble for discouraging
+            setTimeout(function() {
+                commentNone.style.display = "none"; // Skjul taleboble efter 3 sekunder
+            }, 3000); // 3000 ms = 3 sekunder
+        } else {
+            commentNone.style.display = "none"; // Skjul taleboble
+        }
+    }
+
+    // Lyt efter ændringer på radio-knapperne og opdater kommentarer
+    document.querySelectorAll('input[name="answer"]').forEach(function(radio) {
+        radio.addEventListener("change", hideUnhide); // Kald hideUnhide når en radio-knap ændres
+    });
+</script>
+</main>
+
