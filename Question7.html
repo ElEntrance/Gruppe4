@@ -23,10 +23,14 @@
                                     <li><a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a></li>
                                 </ul>
                              </header>
-                             <main class="containerquestion">
+                             <main class="questions">
 
                                 <h2> Now to pasta! How do you like it? 🫦 </h2>
-                    
+                            </main>
+
+                <br>
+
+
                 <form method="POST" class="answer-form">
                     <div class="answer-option">
                         <input type="radio" id="answer1" name="answer" value="3">
@@ -44,8 +48,55 @@
                 <input type="radio" id="answer4" name="answer" value="0">
             <label for="answer4">White 🙂</label>
             </div>
-                <button type="submit" class="btnq">Next Question</button>
+                <button type="submit" class="btn">Next Question</button>
             </form>
-        </main>
+
             </body>
         </html>
+
+                <!-- Kommentarer der kun vises når "All duh" eller "None" er valgt -->
+                <div id="commentAllDuh" class="comment-bubble" style="display:none;">
+                    <p>You ate and left no crumbs (literally!)  </p> <!-- Kommentar for "All duh" -->
+                </div>
+
+                <div id="commentNone" class="comment-bubble" style="display:none;">
+                    <p>Yikes, let’s pretend that didn’t happen   </p> <!-- Kommentar for "None" -->
+                </div>
+
+
+                <script>
+                    // Funktion der viser taleboble og skjuler den efter 3 sekunder
+                    function hideUnhide() {
+                        var allDuhOption = document.getElementById("answer1");  // "All duh" radio-knap
+                        var noneOption = document.getElementById("answer4");    // "None" radio-knap
+                        var commentAllDuh = document.getElementById("commentAllDuh"); // Kommentar for "All duh"
+                        var commentNone = document.getElementById("commentNone"); // Kommentar for "None"
+
+                        // Hvis "All duh" er valgt, vis taleboblen med kommentar "Slayy!"
+                        if (allDuhOption.checked) {
+                            commentAllDuh.style.display = "block"; // Vis taleboble for "All duh"
+                            setTimeout(function() {
+                                commentAllDuh.style.display = "none"; // Skjul taleboble efter 3 sekunder
+                            }, 3000); // 3000 ms = 3 sekunder
+                        } else {
+                            commentAllDuh.style.display = "none"; // Skjul taleboble
+                        }
+
+                        // Hvis "None" er valgt, vis taleboblen med kommentar "ew girl"
+                        if (noneOption.checked) {
+                            commentNone.style.display = "block"; // Vis taleboble for "None"
+                            setTimeout(function() {
+                                commentNone.style.display = "none"; // Skjul taleboble efter 3 sekunder
+                            }, 3000); // 3000 ms = 3 sekunder
+                        } else {
+                            commentNone.style.display = "none"; // Skjul taleboble
+                        }
+                    }
+
+                    // Lyt efter ændringer på radio-knapperne og opdater kommentarer
+                    document.querySelectorAll('input[name="answer"]').forEach(function(radio) {
+                        radio.addEventListener("change", hideUnhide); // Kald hideUnhide når en radio-knap ændres
+                    });
+                </script>
+        </main>
+
