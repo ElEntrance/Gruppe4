@@ -15,6 +15,7 @@
    margin-bottom: 60px;
    padding: 0 20px;
 }
+
 .navbar ul{
     display: flex;
     gap: 40px;
@@ -49,13 +50,6 @@
     line-height: 1;
 }
 
-/*h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    color: beige;
-}*/
-
 #Homepage { /* This is to get the grid layout on the pages that use the id homepage*/
     display: grid;
     grid-template-areas:
@@ -71,42 +65,41 @@
     padding: 10px;
   }
 
-.grid-item1 {
-    background-color: #a4c3b2;
-    grid-area: main;
-    font-size: 24px;
-    border: 2px solid #264143;
-    border-radius: 20px;
-    box-shadow: 3px 4px 0px 1px #E99F4C;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    color: rgb(12, 3, 35);
-    hyphens: auto; /*breaker teksten, hvor det giver mening*/
+  .grid-item1 {
+    background-color: #a4c3b2;     /* Light green background */
+    grid-area: main;               /* Places it in the 'main' area of the grid */
+    font-size: 24px;               /* Sets the font size */
+    border: 2px solid #264143;     /* Adds a border */
+    border-radius: 20px;           /* Rounded corners */
+    box-shadow: 3px 4px 0px 1px #E99F4C; /* Adds a subtle shadow */
+    flex-direction: column; /* defines the direction of the flex containers main axis */
+    align-items: center; /* aligns all the items in the center */
+    font-family: 'Times New Roman', Times, serif; /* defines the font */
+    font-size: 24px; /* defines the size of the text */
+    font-weight: bold;  /* defines the thicknes of the text */
+    text-align: center;            /* Centers the text */
+    color: black; /* makes the font black */
+    hyphens: auto;  /* breaks the text automatically */
     word-break: break-word; /* Ensure long words break correctly */
-    padding: 20px;
+    padding: 20px;                 /* Adds padding inside the box */
 }
 
 .grid-item2 {
-    background-color: #cce3de;
-    grid-area: side;
-    font-size: 24px;
-    border: 2px solid #264143;
-    border-radius: 20px;
-    box-shadow: 3px 4px 0px 1px #E99F4C;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 24px;
-    font-weight: bold;
-    color: rgb(12, 3, 35);
-    padding: 20px;
+  background-color: #cce3de;     /* Light blue background */
+  grid-area: side;               /* Places it in the 'side' area of the grid */
+  font-size: 24px;               /* Sets the font size */
+  border: 2px solid #264143;     /* Adds a border */
+  border-radius: 20px;           /* Rounded corners */
+  box-shadow: 3px 4px 0px 1px #E99F4C; /* Adds a shadow */
+  text-align: center;            /* Centers the text */
+  flex-direction: column; /* defines the direction of the flex containers main axis */
+  align-items: center; /* aligns all the items in the center */
+  font-family: 'Times New Roman', Times, serif; /* defines the font */
+  font-size: 24px; /* defines the size of the text */
+  font-weight: bold;  /* defines the thicknes of the text */
+  text-align: center;            /* Centers the text */
+  color: black; /* makes the font black */
+  padding: 20px;                 /* Adds padding */
 }
 
 .guideline-image {
