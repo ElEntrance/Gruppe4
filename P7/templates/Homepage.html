@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Homepage</title>
+        <link rel="stylesheet"type="text/css" href="/static/css/Style.css">
+    </head>
+<div class="background"></div>
+<body>
+    <div id="Homepage">
+        <header class= "navbar">
+                <h1 class="logo"><a href="/"> Your dietary guidelines </a></h1>
+                <ul>
+                    {% if userID == 0 %}
+                    <li><a href="Signup"> Join Now </a></li>
+                    <li><a href="Login">Log In </a></li>
+                    {% else %}
+                    <li><a href="Logout"> Log Out </a></li>
+                    <li><a href="Profile"> My Profile </a></li>
+                    {% endif %}
+                    <li><a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a></li>
+                </ul>
+        </header>
+<!--main content section-->
+    <main class="grid-item1" lang="en">
+        {% if userID == 0 %}
+        <h1> Welcome!</h1>
+        {% else %}
+        <h1> Welcome back {{ name }}!</h1>
+        {% endif %}
+        <h2> How well do you follow the Danish Ministry’s official guidelines? </h2>
+        <p>
+            Curious if your daily meals align with Denmark’s official dietary guidelines?
+            This quick, fun quiz will show where you stand! Whether you're a health enthusiast, mindful of nutrition, or just curious, get personalized insights and practical tips.
+            Take the quiz to discover your eating habits!
+        </p>
+        {% if userID == 0 %}
+        <form action="Signup">
+        {% else %}
+        <form action="Getstarted">
+        {% endif %}
+            <button class="btn">Let's get started!</button> <!--ændret-->
+        </form>
+    </main>
+
+<!--sidebar section-->
+    <aside class="grid-item2">
+            <h1> What are The Danish Official Dietary Guidelines?</h1>
+            <p> Discover the guidelines designed to help you live a healthier lifestyle! </p>
+            <button class="btn" onclick="window.open('https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad', '_blank');">Read More Here!</button> <!--ændret-->
+            <img src="https://images.unsplash.com/photo-1652465485553-37e8a38201f9?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Food" class="guideline-image">
+    </aside>
+</div>
+</body>
+</html>
+
+

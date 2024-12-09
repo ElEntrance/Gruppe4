@@ -1,0 +1,430 @@
+.background {
+  background: color #f6fff8;;
+  background-position: cover;
+}
+
+.navbar {
+  grid-area: navbar;
+ display: flex;
+ width: 100%;
+ height: 60px;
+ align-items: center;
+ justify-content: space-around;
+ background-color: #6b9080;
+ color: beige;
+ margin-bottom: 60px;
+ padding: 0 20px;
+}
+
+.navbar ul{
+  display: flex;
+  gap: 40px;
+  list-style-type: none;
+}
+.navbar ul, li, a{
+  color: beige;
+  text-decoration: none;
+  list-style: none;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 12px;
+  transition: ease-in-out;
+  align-items: center;
+}
+
+.navbar a:hover{
+  background-color: #a4c3b2;
+}
+.navbar li{
+  float: right;
+}
+
+.logo {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: beige;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 0;
+  line-height: 1;
+}
+
+#Homepage { /* This is to get the grid layout on the pages that use the id homepage*/
+  display: grid;
+  grid-template-areas:
+  "navbar navbar"
+  "main side";
+  grid-template-rows: 60px auto; /* Row heights: navbar 60px, content auto */
+  grid-template-columns: 2fr 1fr; /* Columns: main 2fr, sidebar 1fr */
+  gap: 20px; /* Space between items */
+  row-gap: 30px;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.grid-item1 {
+  background-color: #a4c3b2;     /* Light green background */
+  grid-area: main;               /* Places it in the 'main' area of the grid */
+  font-size: 24px;               /* Sets the font size */
+  border: 2px solid #264143;     /* Adds a border */
+  border-radius: 20px;           /* Rounded corners */
+  box-shadow: 3px 4px 0px 1px #E99F4C; /* Adds a subtle shadow */
+  flex-direction: column; /* defines the direction of the flex containers main axis */
+  align-items: center; /* aligns all the items in the center */
+  font-family: 'Times New Roman', Times, serif; /* defines the font */
+  font-size: 24px; /* defines the size of the text */
+  font-weight: bold;  /* defines the thicknes of the text */
+  text-align: center;            /* Centers the text */
+  color: black; /* makes the font black */
+  hyphens: auto;  /* breaks the text automatically */
+  word-break: break-word; /* Ensure long words break correctly */
+  padding: 20px;                 /* Adds padding inside the box */
+}
+
+.grid-item2 {
+background-color: #cce3de;     /* Light blue background */
+grid-area: side;               /* Places it in the 'side' area of the grid */
+font-size: 24px;               /* Sets the font size */
+border: 2px solid #264143;     /* Adds a border */
+border-radius: 20px;           /* Rounded corners */
+box-shadow: 3px 4px 0px 1px #E99F4C; /* Adds a shadow */
+text-align: center;            /* Centers the text */
+flex-direction: column; /* defines the direction of the flex containers main axis */
+align-items: center; /* aligns all the items in the center */
+font-family: 'Times New Roman', Times, serif; /* defines the font */
+font-size: 24px; /* defines the size of the text */
+font-weight: bold;  /* defines the thicknes of the text */
+text-align: center;            /* Centers the text */
+color: black; /* makes the font black */
+padding: 20px;                 /* Adds padding */
+}
+
+.guideline-image {
+  display: block; /* Ensures it appears on its own line */
+  margin: 20px auto 0; /* Adds spacing and centers the image */
+  margin-bottom: 20px;
+  max-width: 100%; /* Prevents it from exceeding the container width */
+  height: 500px; /* Maintains aspect ratio */
+  border-radius: 10px; /* Optional: Adds rounded corners */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+.containerquestion {
+  background-color: #a4c3b2;
+  grid-area: main;
+  font-size: 24px;
+  border: 2px solid #264143;
+  border-radius: 20px;
+  box-shadow: 3px 4px 0px 1px #E99F4C;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(12, 3, 35);
+  padding: 20px;
+}
+
+/* From Uiverse.io by mi-series to get container features*/
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.form_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #EDDCD9;
+  height: auto;
+  width: auto;
+  border: 2px solid #264143;
+  border-radius: 20px;
+  box-shadow: 3px 4px 0px 1px #E99F4C;
+}
+
+.title {
+  color: #264143;
+  font-weight: 900;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.sub_title {
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin: 10px;
+}
+
+.form_style {
+  outline: none;
+  border: 2px solid #264143;
+  box-shadow: 3px 4px 0px 1px #E99F4C;
+  width: 290px;
+  padding: 12px 10px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.form_style:focus, .btn:focus {
+  transform: translateY(4px);
+  box-shadow: 1px 2px 0px 0px #E99F4C;
+}
+
+.btn {
+  padding: 15px;
+  margin: 25px 0px;
+  width: 290px;
+  font-size: 15px;
+  background: #c44b9a;
+  border-radius: 10px;
+  font-weight: 800;
+  box-shadow: 3px 3px 0px 0px #E99F4C;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: .9;
+}
+
+.link {
+  font-weight: 800;
+  color: #264143;
+  padding: 5px;
+}
+
+.grid-item1result {
+  background-color: #a4c3b2;
+  grid-area: main;
+  font-size: 24px;
+  border: 2px solid #264143;
+  border-radius: 20px;
+  box-shadow: 3px 4px 0px 1px #E99F4C;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  hyphens: auto; /*skulle breake teksten, hvor det giver mening*/
+  margin-left: 15px;
+  margin-top: -30px;
+  margin-bottom: 5px;
+
+}
+
+.grid-item2result {
+  background-color: #cce3de;
+  grid-area: side;
+  font-size: 24px;
+  border: 2px solid #264143;
+  border-radius: 20px;
+  box-shadow: 3px 4px 0px 1px #E99F4C;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-right: 15px;
+  margin-top: -30px;
+  margin-bottom: 5px;
+
+}
+
+.result-header {
+margin-bottom: -70px;
+font-weight: bold;
+  font-size: 45px;
+  text-align: center;
+}
+
+
+.total-score {
+margin-bottom: -17px;
+font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.result-comment {
+margin-bottom: -17px;
+font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.result-title {
+margin-bottom: -17px;
+font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.result-advice {
+margin-bottom: -17px;
+font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.result-stars {
+margin-bottom: -17px;
+font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+}
+
+.result-share {
+margin-left: 25px;
+margin-right: 20px;
+margin-bottom: 30px;
+font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.result-container {
+display: flex;
+justify-content: space-between;
+}
+
+
+.grid-item1result, .grid-item2result {
+width: 48%;
+}
+.result-diploma {
+  margin-bottom: -70px;
+  font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+}
+
+.result-congratulations {
+  margin-bottom: -70px;
+  margin-top: 60px;
+  font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+  /* Form styling */
+.answer-form {
+display: flex;
+flex-direction: column; /* Vertikal opstilling af muligheder */
+align-items: center; /* Centrer horisontalt */
+gap: 15px; /* Lidt luft mellem svarmulighederne */
+}
+
+/* Styling af hver svarmulighed */
+.answer-option {
+display: flex;
+align-items: center; /* Centrerer knapper og tekst vertikalt */
+gap: 10px; /* Luft mellem radio-knap og tekst */
+background-color: #f0f0f0; /* Lys baggrund for svarmuligheder */
+border: 2px solid #264143; /* Tydelig kant */
+border-radius: 10px; /* Bløde hjørner */
+padding: 10px 20px; /* Gør det nemt at klikke */
+cursor: pointer; /* Gør det klart, at det er klikbart */
+width: 100%;
+max-width: 400px; /* Begræns bredde */
+transition: background-color 0.3s ease; /* Smooth hover-effekt */
+}
+
+.answer-option:hover {
+background-color: #e99f4c; /* Skift farve ved hover */
+}
+
+/* Skjul standard radio-knap */
+.answer-option input[type="radio"] {
+appearance: none; /* Fjern standard styling */
+width: 20px;
+height: 20px;
+border: 2px solid #264143; /* Knapkant */
+border-radius: 50%; /* Rund knap */
+background-color: #fff; /* Hvid baggrund */
+cursor: pointer; /* Klikbart */
+position: relative; /* For pseudo-element */
+outline: none; /* Ingen fokusramme */
+}
+
+/* Tilstand for valgt knap */
+.answer-option input[type="radio"]:checked {
+background-color: #264143; /* Fyld farve*/
+}
+
+/* Ensret spørgsmål og svarmuligheder */
+.questions {
+text-align: center; /* Centrér spørgsmål og svarmuligheder */
+margin-bottom: 20px; /* Lidt afstand mellem spørgsmål og svarmuligheder */
+}
+
+.answer-form {
+display: flex;
+flex-direction: column; /* Svarmulighederne vises under hinanden */
+align-items: center; /* Centrér elementerne */
+gap: 15px; /* Afstand mellem svarmulighederne */
+}
+
+.answer-option {
+text-align: center;
+margin: 0; /* Fjern ekstra margener */
+}
+
+.btnq {
+margin-top: 20px; /* Lidt afstand mellem svarmuligheder og knappen */
+padding: 10px 20px;
+background-color: #4CAF50;
+color: white;
+outline: none;
+border: 2px solid #264143;
+border-radius: 5px;
+cursor: pointer;
+transform: translateY(4px);
+  box-shadow: 1px 2px 0px 0px #E99F4C;
+}
+
+.btnq:hover {
+background-color: #45a049; /* Effekt ved hover */
+}
+
+
+/* Styling for taleboblen */
+.comment-bubble {
+display: none; /* Skjult som standard */
+position: absolute; /* For at placere den hvor som helst */
+top: 390px;
+right: 145px;
+width: 250px;
+padding: 10px 20px; /* Polstring for at gøre den behagelig at læse */
+background-color: #f0f0f0; /* Baggrundsfarve - ændr denne til din hjemmesides baggrundsfarve */
+border-radius: 15px; /* Runde hjørner */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Lidt skygge for en 3D-effekt */
+font-size: 16px; /* Størrelse på teksten */
+color: #333; /* Mørk tekstfarve */
+font-family: Arial, sans-serif; /* Font der passer til din hjemmeside */
+max-width: 300px; /* Maksimal bredde på boblen */
+z-index: 10; /* Sørger for, at boblen er synlig */
+}
+
+/* Pil til taleboblen */
+.comment-bubble:after {
+content: '';
+position: absolute;
+bottom: -10px; /* Lidt under taleboblen */
+left: 50%;
+transform: translateX(-50%);
+border-width: 10px;
+border-style: solid;
+border-color: #f0f0f0 transparent transparent transparent; /* Farve på pilen, match med boblens farve */
+}

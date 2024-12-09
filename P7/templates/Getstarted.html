@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Homepage</title>
+        <link rel="stylesheet"type="text/css" href="/static/css/Style.css">
+    </head>
+
+<body>
+     <div id="Homepage">
+        <header class= "navbar">
+                <h1><a href="/"> Your dietary guidelines </a></h1>
+                <ul> <!--makes it an un orderes list-->
+                    <li><a href="Signup"> Log out </a></li> <!--li makes it into a list-->
+                    <li><a href="Profile">My Profile </a></li>
+                    <li><a href="https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad"> Read More </a></li>
+                </ul>
+        </header>
+
+        <!--main content section-->
+    <main class="grid-item1">
+        <h1> Hi, Baddie!</h1>
+        <p>This quiz is designed to help YOU gain more insight to your eating habits - so be honest!</p>
+        <p>You promise?</p>
+        <form action="Question1">
+        <button class="btn">YES</button>
+    </form>
+
+    </main>
+
+<!--sidebar section-->
+    <aside class="grid-item2">
+            <h1> What are The Danish Official Dietary Guidelines?</h1>
+            <p> Discover the guidelines designed to help you live a healthier lifestyle! </p>
+            <button class="btn" onclick="window.open('https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/de-officielle-kostraad', '_blank');">Read More Here!</button> <!--ændret-->
+            <img src="https://images.unsplash.com/photo-1652465485553-37e8a38201f9?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Food" class="guideline-image">
+    </aside>
+</div>
+</body>
+</html>
