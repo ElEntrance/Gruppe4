@@ -336,7 +336,7 @@ border: 2px solid #264143; /* Tydelig kant */
 border-radius: 10px; /* Bløde hjørner */
 padding: 10px 20px; /* Gør det nemt at klikke */
 cursor: pointer; /* Gør det klart, at det er klikbart */
-width: 100%;
+width: 400px;
 max-width: 400px; /* Begræns bredde */
 transition: background-color 0.3s ease; /* Smooth hover-effekt */
 }
